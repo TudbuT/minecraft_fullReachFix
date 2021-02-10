@@ -27,12 +27,12 @@ public class EventListener implements Listener {
             float f = onPlayerHitPlayer((Player) event.getDamager(), event.getEntity());
             PlayerRecord record = Main.main.records.get(event.getDamager().getUniqueId().toString());
             Utils.displayActionTitle(((Player) event.getDamager()), "Your reach record: " + f + " / " + record.playerReach + " / " + record.offenses);
-            if(record.offenses >= 3) {
+            if(record.offenses >= Main.Config.stopAt) {
                 event.setCancelled(true);
             }
-            if(record.offenses >= 6) {
+            if(record.offenses >= Main.Config.kickAt) {
                 ((Player) event.getDamager()).kickPlayer("ReachHacks detected!");
-                record.offenses = 2.8f;
+                record.offenses = (float) (Main.Config.stopAt - 0.2);
             }
         }
     }

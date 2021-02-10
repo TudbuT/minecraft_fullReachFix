@@ -5,7 +5,7 @@ public class PlayerRecord {
     public float playerReach = 1.5f;
     
     public boolean isReachNormal() {
-        return playerReach < 4f;
+        return playerReach < Main.Config.maxReach;
     }
     
     public float offenses = 0;
@@ -16,22 +16,14 @@ public class PlayerRecord {
             playerReach /= 2; // Average between this reach and the reach recorded before
             if(!isReachNormal()) {
                 offenses++; // Add offense if reach is too much
-            }
-            else {
-                offenses -= 0.2;    // If reach is normal and achievable,
-                // remove one fifth of a offense, so after 5 normal hits,
-                // a strange hit is normalized again.
-                if(offenses < 0)
-                    offenses = 0;
+                return;
             }
         }
-        else {
-            offenses -= 0.2;
-            // If reach is normal and achievable,
-            // remove one fifth of a offense, so after 5 normal hits,
-            // a strange hit is normalized again.
-            if(offenses < 0)
-                offenses = 0;
-        }
+        offenses -= 0.2;
+        // If reach is normal and achievable,
+        // remove one fifth of a offense, so after 5 normal hits,
+        // a strange hit is normalized again.
+        if(offenses < 0)
+            offenses = 0;
     }
 }

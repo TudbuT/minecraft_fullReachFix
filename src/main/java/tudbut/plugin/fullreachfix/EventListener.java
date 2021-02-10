@@ -32,7 +32,7 @@ public class EventListener implements Listener {
             }
             if(record.offenses >= 6) {
                 ((Player) event.getDamager()).kickPlayer("ReachHacks detected!");
-                record.offenses = 2.9f;
+                record.offenses = 2.8f;
             }
         }
     }

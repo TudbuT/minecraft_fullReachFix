@@ -1,7 +1,6 @@
 package de.tudbut.tools;
 
 import de.tudbut.type.StringArray;
-import tudbut.obj.TypedArray;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -30,41 +29,9 @@ public class Tools {
         return array[(int) Math.floor(Math.random() * array.length)];
     }
     
-    public static <T> T randomOutOfArray(TypedArray<T> array) {
-        return array.get((int) Math.floor(Math.random() * array.length()));
-    }
-
-    public static String randomString(int length, String pool) {
-        StringBuilder r = new StringBuilder();
-
-        for (int i = 0; i < length; i++) {
-            r.append(pool.charAt(ExtendedMath.random(0, pool.length() - 1)));
-        }
-
-        return r.toString();
-    }
 
     public static void copyArray(Object array1, Object array2, int copyLength) {
         System.arraycopy(array1, 0, array2, 0, copyLength);
-    }
-
-    public static String randomAlphanumericString(int length) {
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        String pool = alphabet + alphabet.toUpperCase() + "0123456789";
-
-        return randomString(length, pool);
-    }
-
-    public static String randomReadableString(int length) {
-        String pool = "bcdfghjklmnpqrstvwxyz";
-        String readablePool = "aeiou";
-        
-        
-        StringBuilder r = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            r.append(pool.charAt(ExtendedMath.random(0, pool.length() - 1))).append(readablePool.charAt(ExtendedMath.random(0, readablePool.length() - 1)));
-        }
-        return r.toString().substring(0, length);
     }
 
     public static String getTime() {

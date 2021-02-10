@@ -1,7 +1,6 @@
 package tudbut.tools;
 
 import de.tudbut.tools.Tools;
-import tudbut.obj.Mappable;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,18 +50,6 @@ public class ArrayTools {
         return d;
     }
 
-    public static Map<String, String> mapFrom(Mappable[] mappables) {
-        Map<String, String> map = new HashMap<>();
-
-        for (int i = 0; i < mappables.length; i++) {
-            map.put(String.valueOf(i), Tools.mapToString(mappables[i].map()));
-        }
-
-        map.put("len", String.valueOf(mappables.length));
-
-        return map;
-    }
-
     public static <T> Map<String, String> mapFrom(T[] objects, Getter<T, String> getter) throws Throwable {
         Map<String, String> map = new HashMap<>();
 
@@ -82,17 +69,6 @@ public class ArrayTools {
 
         for (int i = 0; i < len; i++) {
             t[i] = getter.get(map.get(String.valueOf(i)));
-        }
-
-        return t;
-    }
-
-    public static <T> T[] fromValueArray(ValueArray<T> valueArray, T... ignore) {
-        T[] t;
-        t = ArrayGetter.newGenericArray(valueArray.length, ignore);
-
-        for (int i = 0; i < valueArray.length; i++) {
-            t[i] = valueArray.get(i);
         }
 
         return t;

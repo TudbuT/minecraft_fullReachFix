@@ -3,14 +3,12 @@ package tudbut.plugin.fullreachfix;
 import de.tudbut.tools.FileRW;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import tudbut.obj.Save;
 import tudbut.obj.TLMap;
 import tudbut.parsing.TCN;
 import tudbut.tools.ConfigSaverTCN;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
 
 public class Main extends JavaPlugin {
     
@@ -20,7 +18,6 @@ public class Main extends JavaPlugin {
         main = this;
     }
     
-    @Save
     TLMap<String, PlayerRecord> records = new TLMap<>();
     
     @Override

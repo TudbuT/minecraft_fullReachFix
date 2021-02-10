@@ -5,7 +5,7 @@ public class PlayerRecord {
     public float playerReach = 1.5f;
     
     public boolean isReachNormal() {
-        return playerReach < 3.5f;
+        return playerReach < 4f;
     }
     
     public float offenses = 0;
@@ -26,9 +26,10 @@ public class PlayerRecord {
             }
         }
         else {
-            offenses -= 0.2;    // If reach is normal and achievable,
-                                // remove one fifth of a offense, so after 5 normal hits,
-                                // a strange hit is normalized again.
+            offenses -= 0.2;
+            // If reach is normal and achievable,
+            // remove one fifth of a offense, so after 5 normal hits,
+            // a strange hit is normalized again.
             if(offenses < 0)
                 offenses = 0;
         }

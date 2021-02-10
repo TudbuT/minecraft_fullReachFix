@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="minecraft_fullReachFix.main:jar">
+    <output-path>$PROJECT_DIR$/plugins</output-path>
+    <root id="archive" name="frf.jar">
+      <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
+      <element id="module-output" name="minecraft_fullReachFix.main" />
+    </root>
+  </artifact>
+</component>

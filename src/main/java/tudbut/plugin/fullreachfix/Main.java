@@ -61,5 +61,6 @@ public class Main extends JavaPlugin {
         public static int kickAt = 6;
         public static int stopAt = 3;
         public static float maxReach = 3;
+        public static boolean showRecordOnHotbar = true;
     }
 }

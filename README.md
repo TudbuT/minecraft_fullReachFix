@@ -9,6 +9,7 @@ ADVANTAGES
 - Records stay after restart
 - Combos and lag don't matter much
 - Bad records are fixed by playing legit
+- No bypasses due to it being a force-type anticheat
 
 DISADVANTAGES
 =============
